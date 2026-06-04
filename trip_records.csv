@@ -1,0 +1,17 @@
+trip_id,fecha,hora,dia_semana,origen,destino,ruta_principal,tiempo_estimado_min,tiempo_real_min,transbordos,afluencia_origen,afluencia_destino,ocupacion_promedio,clima,incidente,tipo_usuario
+1,2026-05-01,06:15,Jueves,Portal Sur,Universidad Nacional,G43,27,31,1,420,390,0.82,Soleado,0,Trabajador
+2,2026-05-01,06:40,Jueves,Bosa,NQS,C15,18,19,0,310,450,0.76,Nublado,0,Estudiante
+3,2026-05-01,07:10,Jueves,Perdomo,CAD,G43,17,24,1,360,340,0.88,Lluvia,1,Trabajador
+4,2026-05-01,08:05,Jueves,Madelena,Universidad Nacional,C15,16,17,0,510,420,0.91,Soleado,0,Estudiante
+5,2026-05-01,12:20,Jueves,Ricaurte,Portal Sur,C15,16,15,0,280,350,0.52,Soleado,0,Otro
+6,2026-05-01,13:45,Jueves,NQS,Bosa,B23,20,23,1,295,305,0.61,Nublado,0,Trabajador
+7,2026-05-01,17:10,Jueves,Portal Sur,CAD,G43,22,29,1,610,570,0.96,Lluvia,1,Trabajador
+8,2026-05-01,18:05,Jueves,Sevillana,Universidad Nacional,H21,14,18,1,540,500,0.89,Lluvia,0,Estudiante
+9,2026-05-02,06:05,Viernes,Portal Sur,NQS,G43,21,22,0,430,470,0.79,Soleado,0,Trabajador
+10,2026-05-02,07:25,Viernes,Bosa,Universidad Nacional,C15,21,20,0,355,445,0.73,Soleado,0,Estudiante
+11,2026-05-02,09:10,Viernes,CAD,Perdomo,B23,21,26,1,240,260,0.57,Nublado,0,Otro
+12,2026-05-02,17:50,Viernes,Madelena,CAD,H21,13,21,1,580,540,0.94,Lluvia,1,Trabajador
+13,2026-05-03,10:00,Sábado,Portal Sur,Ricaurte,C15,21,22,0,260,300,0.49,Soleado,0,Otro
+14,2026-05-03,11:35,Sábado,Perdomo,Universidad Nacional,G43,26,30,1,230,280,0.55,Nublado,0,Estudiante
+15,2026-05-03,16:20,Sábado,NQS,Portal Sur,G43,21,24,0,315,360,0.63,Soleado,0,Otro
+

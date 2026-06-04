@@ -1,5 +1,6 @@
 from collections import defaultdict
 import heapq
+import pandas as pd
 
 
 class TransportGraph:
@@ -32,7 +33,7 @@ class TransportGraph:
                     "total_cost": total_cost,
                     "path": new_path,
                     "transfers": transfers,
-                    "routes_used": route_history
+                    "routes_used": route_history,
                 }
 
             for neighbor, edge_cost, route_name in self.graph[current]:
@@ -61,30 +62,23 @@ class TransportGraph:
                         new_path,
                         route_name,
                         new_transfers,
-                        new_route_history
-                    )
+                        new_route_history,
+                    ),
                 )
 
         return None
 
 
-def build_sample_network():
+def build_network_from_csv(csv_path="network_edges.csv"):
+    df = pd.read_csv(csv_path)
     graph = TransportGraph()
 
-    graph.add_connection("Portal Sur", "Perdomo", 5, "G43")
-    graph.add_connection("Perdomo", "Madelena", 4, "G43")
-    graph.add_connection("Madelena", "Sevillana", 4, "G43")
-    graph.add_connection("Sevillana", "NQS", 8, "G43")
-
-    graph.add_connection("NQS", "CAD", 5, "B23")
-    graph.add_connection("CAD", "Universidad Nacional", 4, "B23")
-
-    graph.add_connection("Portal Sur", "Bosa", 6, "C15")
-    graph.add_connection("Bosa", "Madelena", 5, "C15")
-    graph.add_connection("Madelena", "Ricaurte", 10, "C15")
-    graph.add_connection("Ricaurte", "Universidad Nacional", 6, "C15")
-
-    graph.add_connection("Sevillana", "Ricaurte", 7, "H21")
-    graph.add_connection("Ricaurte", "CAD", 3, "H21")
+    for _, row in df.iterrows():
+        graph.add_connection(
+            row["origin"],
+            row["destination"],
+            int(row["time_cost"]),
+            row["route_name"],
+        )
 
     return graph

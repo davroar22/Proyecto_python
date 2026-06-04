@@ -1,18 +1,18 @@
 import streamlit as st
-from transport_data import build_sample_network
+from transport_data import build_network_from_csv
 
 st.set_page_config(
     page_title="Optimizador de Rutas de Transporte",
     page_icon="🚌",
-    layout="centered"
+    layout="centered",
 )
 
-graph = build_sample_network()
+graph = build_network_from_csv("network_edges.csv")
 stations = sorted(list(graph.stations))
 
 st.title("🚌 Optimizador de Rutas de Transporte")
 st.write("Encuentra la mejor ruta entre dos estaciones.")
-st.info("Ejemplo demostrativo inspirado en estaciones tipo TransMilenio. Los datos no son oficiales.")
+st.info("Red cargada desde archivo CSV.")
 
 with st.sidebar:
     st.header("Configuración")
@@ -21,11 +21,11 @@ with st.sidebar:
         min_value=0,
         max_value=15,
         value=4,
-        step=1
+        step=1,
     )
 
-origin = st.selectbox("Selecciona estación de origen", stations, index=stations.index("Portal Sur"))
-destination = st.selectbox("Selecciona estación de destino", stations, index=stations.index("Universidad Nacional"))
+origin = st.selectbox("Selecciona estación de origen", stations)
+destination = st.selectbox("Selecciona estación de destino", stations)
 
 if st.button("Calcular mejor ruta", type="primary"):
     if origin == destination:

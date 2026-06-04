@@ -1,0 +1,14 @@
+origin,destination,time_cost,route_name
+Portal Sur,Perdomo,5,G43
+Perdomo,Madelena,4,G43
+Madelena,Sevillana,4,G43
+Sevillana,NQS,8,G43
+NQS,CAD,5,B23
+CAD,Universidad Nacional,4,B23
+Portal Sur,Bosa,6,C15
+Bosa,Madelena,5,C15
+Madelena,Ricaurte,10,C15
+Ricaurte,Universidad Nacional,6,C15
+Sevillana,Ricaurte,7,H21
+Ricaurte,CAD,3,H21
+

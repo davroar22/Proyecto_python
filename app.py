@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from transport_data import build_network_from_csv
 
 st.set_page_config(
@@ -53,6 +54,34 @@ if st.button("Calcular mejor ruta", type="primary"):
 
             st.subheader("Detalle")
             st.json(result)
+
+st.markdown("---")
+
+st.subheader("Aprendizaje no supervisado")
+st.write(
+    "En esta sección se analizan patrones ocultos de movilidad, agrupación de viajes y detección de comportamientos similares sin variable objetivo."
+)
+
+if pd.io.common.file_exists("trip_records.csv"):
+    df_unsup = pd.read_csv("trip_records.csv")
+    st.write("Muestra de datos para aprendizaje no supervisado:")
+    st.dataframe(df_unsup.head(10))
+else:
+    st.warning("No se encontró trip_records.csv")
+
+st.markdown("---")
+
+st.header("Aprendizaje supervisado")
+st.write(
+    "En esta sección se utilizan datos etiquetados para predecir variables como tiempo real de viaje o retraso alto."
+)
+
+if pd.io.common.file_exists("trip_records_supervised.csv"):
+    df_sup = pd.read_csv("trip_records_supervised.csv")
+    st.write("Muestra de datos para aprendizaje supervisado:")
+    st.dataframe(df_sup.head(10))
+else:
+    st.warning("No se encontró trip_records_supervised.csv")
 
 st.markdown("---")
 st.caption("Desarrollado en Python + Streamlit")
